@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1644628504 source:c:\users\gabriel alves\documents\projetos c\e.d 1 2021.2\testelogicacavalo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<time.h>
+
