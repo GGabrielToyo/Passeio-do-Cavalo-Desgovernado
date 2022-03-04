@@ -4,7 +4,7 @@
 #include <time.h>
 #define LIM 8
 
-void executando_movimentos() //Aqui usuário entra com a casa inicial e a lógica faz as possíveis movimentações. A cada movimento feito o tabuleiro e printado na tela.
+void executando_movimentos() //Aqui usuÃ¡rio entra com a casa inicial e a lÃ³gica faz as possÃ­veis movimentaÃ§Ãµes. A cada movimento feito o tabuleiro e printado na tela.
 {                   setlocale(LC_ALL,"");
 
      int pos_inicial;
@@ -12,14 +12,14 @@ void executando_movimentos() //Aqui usuário entra com a casa inicial e a lógica 
     int j = 0;
     int l = 0;
     int c = 0;
-    int cont = 1;  //Inicia o tabuleiro com os números consecutivos.
+    int cont = 1;  //Inicia o tabuleiro com os nÃºmeros consecutivos.
     int cont_jogadas_feitas = 1; //Conta as jogadas que foram feitas.
-    int cont_casas_nao_visitadas = 0; //Conta as casas que o cavalo não passou.
+    int cont_casas_nao_visitadas = 0; //Conta as casas que o cavalo nÃ£o passou.
     int print_casas = 1; //Contador que incrementa as casas por onde o cavalo passar.
-    int num_aleatorio; //Número aleatorio para escolher qual dos movimentos válidos será feito.
-    int jogadas_invalidas; //Contador para saber quais movimentos são inválidos.
+    int num_aleatorio; //NÃºmero aleatorio para escolher qual dos movimentos vÃ¡lidos serÃ¡ feito.
+    int jogadas_invalidas; //Contador para saber quais movimentos sÃ£o invÃ¡lidos.
     int matriz[LIM][LIM]; //Matriz do tabuleiro.
-    int vetor_jogadas[LIM]; //Vetor que guarda as movimentações válidas.
+    int vetor_jogadas[LIM]; //Vetor que guarda as movimentaÃ§Ãµes vÃ¡lidas.
 
         printf("\n\n");
     for (i = 0; i < LIM; i++) {
@@ -33,7 +33,7 @@ void executando_movimentos() //Aqui usuário entra com a casa inicial e a lógica 
     printf("\n");
 
     cont = 1;
-    printf("\tIndique a posição de partida (casa inicial) do cavalo: ");
+    printf("\tIndique a posiÃ§Ã£o de partida (casa inicial) do cavalo: ");
     scanf("%i", &pos_inicial);
 
     for (i = 0; i < LIM; i++) {
@@ -117,11 +117,11 @@ void executando_movimentos() //Aqui usuário entra com a casa inicial e a lógica 
             if (jogadas_invalidas != 8) {
 
               srand(time(NULL));
-            do { // Gerando o número aleatorio  onde o vetor_jogadas não tenha um valor 0.
+            do { // Gerando o nÃºmero aleatorio  onde o vetor_jogadas nÃ£o tenha um valor 0.
                 num_aleatorio = rand() % 7;
             }   while (vetor_jogadas[num_aleatorio] == 0);
 
-           switch (num_aleatorio) { // Aqui vai ser escolhido a movimentação conforme o número aleatório.
+           switch (num_aleatorio) { // Aqui vai ser escolhido a movimentaÃ§Ã£o conforme o nÃºmero aleatÃ³rio.
         case 0:
             print_casas++;
             l = l + 1;
@@ -203,32 +203,33 @@ void executando_movimentos() //Aqui usuário entra com a casa inicial e a lógica 
                 printf("\n");
 
            printf("\t Quantidade de casas visitadas foi de %i.\n", cont_jogadas_feitas);
-           printf("\t Quantidade de casas não visitadas foi de %i.\n\n", cont_casas_nao_visitadas);
+           printf("\t Quantidade de casas nÃ£o visitadas foi de %i.\n\n", cont_casas_nao_visitadas);
 
  return 0;
 }
 
-int menu () { //Menu para usuário iniciar o jogo ou encerrar o programa.
+int menu () { //Menu para usuÃ¡rio iniciar o jogo ou encerrar o programa.
 
         setlocale(LC_ALL,"");
         char s[30];
-        int resposta; //Guarda a resposta do usuário.
+        int resposta; //Guarda a resposta do usuÃ¡rio.
 
         printf("\n");
         printf("\t\t\t\t:::::::::::::::::::::::BEM VINDO:::::::::::::::::::::::\n\n\n");
         printf("\n");
         printf("\tMenu\n");
-        printf("\tINSTRUÇÕES: INSIRA APENAS NÚMEROS. OBRIGADO!!!\n\n");
+        printf("\tINSTRUÃ‡Ã•ES: INSIRA APENAS NÃšMEROS. OBRIGADO!!!\n\n");
         printf("\t[1] Iniciar Jogo\n");
         printf("\t[2] Sair do programa\n");
 
 
         do {
             printf("\tEntre com sua escolha: ");
+            fflush(stdin);
             gets(s);
             resposta = atoi(s);
             if (resposta < 1 || resposta > 2) {
-                printf("\tOpção inválida.\n");
+                printf("\tOpÃ§Ã£o invÃ¡lida.\n");
             }
         } while (resposta < 1 || resposta > 2);
 
@@ -242,7 +243,7 @@ int main() {
             int resposta;
             char flag;
 
-            resposta = menu(); //Busca por referência a resposta inserida no menu.
+            resposta = menu(); //Busca por referÃªncia a resposta inserida no menu.
 
           do {
 
@@ -252,7 +253,7 @@ int main() {
                 system("cls");
                 executando_movimentos();
                 printf("\tDigite :\n");
-                printf("\t[1] Para fazer uma nova simulação.\n"); //Se 1 for escolhido vai direto para inserir a casa inicial.
+                printf("\t[1] Para fazer uma nova simulaÃ§Ã£o.\n"); //Se 1 for escolhido vai direto para inserir a casa inicial.
                 printf("\t[2] Para voltar ao menu.\n"); //Se 2 for escolhido ele vai para o menu.
                 printf("\t[ ] Qualquer tecla para encerrar.\n"); //Qualquer tecla para encerrar.
                 scanf("%s", &flag);
